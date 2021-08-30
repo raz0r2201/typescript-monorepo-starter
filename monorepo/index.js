@@ -96,6 +96,17 @@ yargs
 						}/${name}`,
 					)
 
+					await setJsonFile(
+						path.join(
+							ROOT_DIR,
+							'packages',
+							name,
+							'tsconfig.build.json'
+						),
+						'compilerOptions.tsBuildInfoFile',
+						`../../.build-cache/${name}.tsbuildinfo`
+					)
+
 					console.log(`Package '${name}' added`)
 				},
 			)
