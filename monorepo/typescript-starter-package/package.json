@@ -1,0 +1,30 @@
+{
+  "name": "nametorename",
+  "private": true,
+  "version": "0.0.0",
+  "author": {
+    "name": "Ali Can Ülger",
+    "email": "alican.uelger@web.de"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc --build tsconfig.build.json",
+    "clean": "tsc --build tsconfig.build.json --clean && rimraf coverage *.log dist && jest --clearCache",
+    "watch": "tsc --watch",
+
+    "test": "cross-env NODE_ENV=test jest",
+    "test:unit": "cross-env NODE_ENV=test jest test/unit",
+    "test:integration": "cross-env NODE_ENV=test jest test/integration",
+    "coverage": "cross-env NODE_ENV=test jest --coverage",
+    "coverage:show": "live-server coverage",
+
+    "dev": "cross-env NODE_ENV=development nodemon",
+    "prod": "cross-env NODE_ENV=production node dist/index.js"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
