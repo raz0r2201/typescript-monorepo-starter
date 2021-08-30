@@ -3,6 +3,10 @@
   "version": "0.0.0",
   "main": "index.js",
   "private": true,
+  "author": {
+    "name": "Ali Can Ülger",
+    "email": "alican.uelger@web.de"
+  },
   "workspaces": [
     "packages/**"
   ],
