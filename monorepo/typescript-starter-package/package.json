@@ -14,7 +14,7 @@
   "scripts": {
     "build": "tsc --build tsconfig.build.json",
     "clean": "tsc --build tsconfig.build.json --clean && rimraf coverage *.log dist && jest --clearCache",
-    "watch": "tsc --watch",
+    "watch": "tsc --watch tsconfig.build.json",
 
     "test": "cross-env NODE_ENV=test jest",
     "test:unit": "cross-env NODE_ENV=test jest test/unit",
