@@ -1,29 +1,13 @@
 {
+  "extends": "./tsconfig.build.json",
+
   "compilerOptions": {
-    "target": "ESNext",
-    "module": "CommonJS",
-    "moduleResolution": "Node",
-    "rootDir": ".",
-    "baseUrl": "packages",
+    "baseUrl": ".",
     "paths": {
-      "@raz0r2201": [
-        "*/src"
+      "@raz0r2201/*": [
+        "packages/*/src"
       ]
     },
-    "strict": true,
-    "alwaysStrict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": false,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    "removeComments": true,
-    "composite": true,
-    "declaration": true,
-    "declarationMap": true,
-    "sourceMap": true,
-    "esModuleInterop": true,
-    "incremental": true,
-    "allowSyntheticDefaultImports": true,
-    "resolveJsonModule": true
+    "noEmit": true
   }
 }

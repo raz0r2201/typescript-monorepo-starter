@@ -1,0 +1,30 @@
+{
+  "name": "@raz0r2201/ts-node",
+  "version": "0.0.0",
+  "scripts": {
+    "build": "tsc --build tsconfig.build.json",
+    "clean": "tsc --build tsconfig.build.json --clean && rimraf coverage *.log dist && jest --clearCache",
+    "watch": "tsc --watch tsconfig.build.json",
+
+    "test": "cross-env NODE_ENV=test jest",
+    "coverage": "cross-env NODE_ENV=test jest --coverage",
+    "coverage:show": "live-server coverage",
+
+    "dev": "cross-env NODE_ENV=development ts-node-dev -r tsconfig-paths/register --respawn --transpile-only src/index.ts",
+    "prod": "cross-env NODE_ENV=production node dist/index.js"
+  },
+  "dependencies": {
+    "@raz0r2201/foo": "*"
+  },
+  "devDependencies": {
+    "@types/jest": "~26.0.4",
+    "jest": "~26.1.0",
+    "ts-jest": "~26.5.5",
+    "cross-env": "~7.0.3",
+    "rimraf": "~3.0.2",
+    "ts-node-dev": "~1.1.8",
+    "tsconfig-paths": "~3.9.0",
+    "live-server": "~1.2.1",
+    "typescript": "~4.4.0"
+  }
+}
