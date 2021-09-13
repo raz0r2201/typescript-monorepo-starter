@@ -101,10 +101,10 @@ yargs
 							ROOT_DIR,
 							'packages',
 							name,
-							'tsconfig.build.json'
+							'tsconfig.build.json',
 						),
 						'compilerOptions.tsBuildInfoFile',
-						`../../.build-cache/${name}.tsbuildinfo`
+						`../../.build-cache/${name}.tsbuildinfo`,
 					)
 
 					console.log(`Package '${name}' added`)
@@ -160,7 +160,7 @@ yargs
 				`references`,
 				[
 					{
-						path: `../${n2PJson.name}/tsconfig.build.json`,
+						path: `../${name}/tsconfig.build.json`,
 						prepend: false,
 					},
 				],

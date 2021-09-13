@@ -11,18 +11,12 @@
     "packages/**"
   ],
   "scripts": {
-
     "build": "lerna run --parallel build",
-    "rebuild": "yarn clean && yarn build",
     "clean": "lerna run --parallel clean && rimraf .build-cache *.log coverage",
+    "build:clean": "yarn clean && yarn build",
 
     "test": "jest",
-    "test:unit": "jest packages/*/test/unit",
-    "test:integration": "jest packages/*/test/integration",
-
     "coverage": "jest --coverage",
-    "coverage:unit": "yarn test:unit --coverage",
-    "coverage:integration": "yarn test:integration --coverage",
     "coverage:show": "live-server coverage",
 
     "lint": "eslint --ext .js --ext .ts --ext .md",
@@ -34,7 +28,6 @@
 
     "add": "node ./monorepo/index add",
     "i": "node ./monorepo/index i"
-
   },
   "dependencies": {
     "ncp": "^2.0.0",
@@ -61,6 +54,7 @@
     "rimraf": "^3.0.2",
     "ts-jest": "^27.0.4",
     "ts-node": "^10.1.0",
+    "ts-node-dev": "^1.1.8",
     "tsconfig-paths": "^3.10.1",
     "typescript": "^4.3.5"
   }
