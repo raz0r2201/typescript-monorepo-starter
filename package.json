@@ -13,21 +13,17 @@
     "clean": "lerna run --parallel clean && rimraf .build-cache *.log coverage",
     "build:clean": "yarn clean && yarn build",
 
-    "test": "jest",
-    "coverage": "jest --coverage",
-    "coverage:show": "live-server coverage",
-
     "lint": "eslint --ext .js --ext .ts --ext .md",
     "format": "yarn lint --fix",
 
     "scope": "lerna run --scope",
+
+    "test": "lerna exec -- yarn test",
+    "coverage": "lerna exec -- yarn coverage",
     "dev": "lerna run --parallel --stream dev",
     "prod": "lerna run --parallel --stream prod"
   },
   "devDependencies": {
-    "@types/jest": "~26.0.4",
-    "jest": "~26.1.0",
-    "ts-jest": "~26.5.5",
     "@typescript-eslint/eslint-plugin": "^4.28.4",
     "@typescript-eslint/parser": "^4.28.4",
     "eslint": "^7.32.0",
